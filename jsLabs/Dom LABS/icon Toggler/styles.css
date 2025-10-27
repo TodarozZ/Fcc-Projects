@@ -1,0 +1,8 @@
+.filled {
+    background-color: black;
+    color: red;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}

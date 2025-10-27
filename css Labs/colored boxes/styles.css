@@ -1,0 +1,31 @@
+body {
+    background-color: #f4f4f4;
+}
+
+.color-box {
+    width: 400px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color1 {
+    background-color: #ffcc00;
+}
+
+.color2 {
+    background-color: rgba(155, 025, 155, 0.8);
+}
+
+.color3 {
+    background-color: aquamarine;
+}
+
+.color4 {
+    background-color: hsla(22, 89%, 48%, 1);
+}
+
+.color5 {
+    background-color: #f4f4f4;
+}
