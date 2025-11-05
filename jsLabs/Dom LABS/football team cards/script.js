@@ -70,3 +70,41 @@ const footballTeam = {
     }
   ]
 }
+
+const team = document.getElementById("team");
+const year = document.getElementById("year");
+const headCoach = document.getElementById("head-coach");
+const playerSelector = document.getElementById("players");
+const cardsContainer = document.getElementById("player-cards");
+
+
+team.textContent = footballTeam.team;
+year.textContent = footballTeam.year;
+headCoach.textContent = footballTeam.headCoach;
+
+
+function createCard(player) {
+  const card = document.createElement("div");
+  card.classList.add("player-card");
+  card.innerHTML = `
+    <h2>${player.isCaptain ? "(Captain)" : ""} ${player.name}</h2>
+    <p>Position: ${player.position}</p>
+  `;
+  return card;
+}
+
+function updateCards() {
+  cardsContainer.innerHTML = "";
+  let selectedPlayers;
+  if (playerSelector.value === "all") {
+    selectedPlayers = footballTeam.players;
+  } else {
+    selectedPlayers = footballTeam.players.filter(player => player.position === playerSelector.value);
+  }
+  selectedPlayers.forEach(player => {
+    const card = createCard(player);
+    cardsContainer.appendChild(card);
+  });
+}
+playerSelector.addEventListener("change", updateCards);
+updateCards();
